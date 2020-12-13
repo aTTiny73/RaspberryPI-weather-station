@@ -1,7 +1,7 @@
-# SensorReadWebsite
+# Raspberry pi zero weather station based on BMP280 sensor
 
 Website contains database <--> backend <--> frontend. Data is sent from rapsberry pi zero that has a BMP280 sensor attached to it. Main server that handles the requests is written in golang, RPI also runs a server on it own and it used to light up a LED on the RPI to demonstrate duplex functionality and its written in python.
-![Screenshot from 2020-07-07 11-43-56](https://user-images.githubusercontent.com/62447953/86762900-3dc8c400-c047-11ea-87e6-5cb144202154.png)
+![Screenshot from 2020-12-13 21-19-59](https://user-images.githubusercontent.com/62447953/102022742-0d6d1a80-3d89-11eb-8135-55e6fbe857d9.png)
 ## Cloning
 ```
 git clone https://github.com/aTTiny73/RaspberryPI-weather-station.git
@@ -32,3 +32,21 @@ Now we need to grant all privileges to user so he can add to the tabel delete et
 ```
 GRANT ALL PRIVILEGES ON SENSORDATA.READINGS TO 'testuser'@'localhost';
 ```
+## How to run
+
+First you need to run the main.go file by running the command :
+```
+go run main.go
+```
+Then you need to run i2cSensorTransmit.py file on the RPI to enable data transmition to server, run the command :
+```
+python3 i2cSensorTransmit.py
+```
+In order to enable led control from the website you need to run ledServer.py file on the RPI as well by running the commands:
+```
+export FLASK_APP=ledServer.py
+sudo -E flask run --host=0.0.0.0 --port=8090
+```
+Last step open the index.html in browser.
+
+## Working principle diagram
