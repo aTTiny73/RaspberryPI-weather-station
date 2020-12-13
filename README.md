@@ -49,4 +49,5 @@ sudo -E flask run --host=0.0.0.0 --port=8090
 ```
 Last step open the index.html in browser.
 
-## Working principle diagram
+## Principle Working diagram
+![131210054_720439402188996_3127702929081130226_n](https://user-images.githubusercontent.com/62447953/102023186-fe3b9c00-3d8b-11eb-8ed7-13f610f3eb85.png)
