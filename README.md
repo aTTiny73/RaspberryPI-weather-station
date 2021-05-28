@@ -28,7 +28,7 @@ Now its time to setup user you can do that by running this command in mysql shel
 ```
 CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testpassword';
 ```
-Now we need to grant all privileges to user so he can add to the tabel delete etc.
+Now we need to grant all privileges to user so he can manipulate data in the table.
 ```
 GRANT ALL PRIVILEGES ON SENSORDATA.READINGS TO 'testuser'@'localhost';
 ```
